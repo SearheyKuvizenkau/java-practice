@@ -6,6 +6,7 @@ public class ArrayTask {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите количество эементов в массиве");
         Integer a = scanner.nextInt();
         System.out.println(a);
         
