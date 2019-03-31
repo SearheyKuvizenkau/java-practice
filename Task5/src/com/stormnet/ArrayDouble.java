@@ -6,7 +6,7 @@ public class ArrayDouble {
                          {5, 11, 12},
                          {13, 22, 15}};
 
-        for (int i = 0; i <array.length; i++) {
+        for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
                 if(i ==j ){
                     System.out.print(array[i][j] + " ");
@@ -16,7 +16,7 @@ public class ArrayDouble {
         System.out.println();
         System.out.println("-------------------------------");
 
-        for (int i = 0; i <array.length; i++) {
+        for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
                     System.out.print(array[i][j]+ " ");
             }
@@ -30,9 +30,7 @@ public class ArrayDouble {
                     System.out.print(array[i][j] + " ");
                 }
             }
-
         }
-
     }
 }
 
