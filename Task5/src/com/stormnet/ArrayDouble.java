@@ -27,7 +27,9 @@ public class ArrayDouble {
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
                 if(i+j==array.length-1){
-                    System.out.print(array[i][j] + " ");
+                    if(array[i][j]>i+j){
+                        System.out.print(array[i][j] + " ");
+                    }
                 }
             }
         }
