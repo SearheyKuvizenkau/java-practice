@@ -1,15 +1,20 @@
 package com.stormnet;
 
-
-import static com.stormnet.CheckService.arrObjects;
-
 public class Main {
+    
     public static void main(String[] args) {
-        int[] CheckPosition = {3, 6, 13, 9, 11, 18};
-        int sum;
-        sum = arrObjects(0, CheckPosition);
 
-        System.out.println(sum);
+        CheckPosition[] checkPositions = new CheckPosition[2];
 
+        CheckPosition check1 = new CheckPosition("Beer", 1.0, 2.8);
+        CheckPosition check2 = new CheckPosition("Cheeps", 1.0, 1.8);
+
+
+        checkPositions[0] = check1;
+        checkPositions[1] = check2;
+
+        CheckService checkservice = new CheckService();
+
+        System.out.print(checkservice.getCheckPrice(checkPositions));
     }
 }
