@@ -1,20 +1,21 @@
 package com.stormnet;
 
-public class Main {
-    
-    public static void main(String[] args) {
+public class CheckService {
 
-        CheckPosition[] checkPositions = new CheckPosition[2];
-
-        CheckPosition check1 = new CheckPosition("Beer", 1.0, 2.8);
-        CheckPosition check2 = new CheckPosition("Cheeps", 1.0, 1.8);
+    public double getCheckPrice(CheckPosition[] checkPositions) {
+        return calculateSum(0, checkPositions);
+    }
 
 
-        checkPositions[0] = check1;
-        checkPositions[1] = check2;
+    private double calculateSum(int index, CheckPosition[] checkPositions) {
 
-        CheckService checkservice = new CheckService();
+        if (index == checkPositions.length - 1) {
 
-        System.out.print(checkservice.getCheckPrice(checkPositions));
+            return checkPositions[index].getCount() * checkPositions[index].getPrice();
+        } else {
+            return checkPositions[index].getCount() * checkPositions[index].getPrice() +
+                    calculateSum(index + 1, checkPositions);
+        }
+
     }
 }
