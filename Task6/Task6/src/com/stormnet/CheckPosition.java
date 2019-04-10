@@ -1,11 +1,31 @@
-package com.stormnet;
+ public String getName() {
+        return name;
+    }
 
-public class CheckPosition {
+    public void setName(String name) {
+        this.name = name;
+    }
 
-    static CheckPosition[] arr = new CheckPosition[6];
+    public double getPrice() {
+        return price;
+    }
 
+    public void setPrice(double price) {
+        this.price = price;
+    }
 
-    private String name;
-    private int price;
-    private int count;
+    public double getCount() {
+        return count;
+    }
+
+    public CheckPosition(String name, double price, double count) {
+        this.name = name;
+        this.price = price;
+        this.count = count;
+    }
+
+    public void setCount(double count) {
+        this.count = count;
+    }
+
 }
