@@ -1,4 +1,12 @@
- public String getName() {
+package com.stormnet;
+
+public class CheckPosition {
+
+    private String name;
+    private double price;
+    private double count;
+
+    public String getName() {
         return name;
     }
 
@@ -29,3 +37,4 @@
     }
 
 }
+
