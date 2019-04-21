@@ -2,44 +2,27 @@ package com.stormnet;
 
 public final class Rectangle extends Shape {
 
-    private double a;
-    private double b;
+    final double a;
+    final double b;
 
-    public double getA() {
-        return a;
-    }
-
-    public void setA(double a) {
-        this.a = a;
-    }
-
-    public double getB() {
-        return b;
-    }
-
-    public void setB(double b) {
-        this.b = b;
-    }
 
     public Rectangle(double a, double b) {
 
-        try{
-            this.a = a;
-            this.b = b;
-        }catch (IllegalArgumentException e) {
-            throw e;
+        if (a <= 0 || b <= 0) {
+            throw new IllegalArgumentException("Значение аргументов  a и b  должно быть строго положительное");
         }
+
+        this.a = a;
+        this.b = b;
     }
 
-
     @Override
-    protected double square() {
+    public double square() {
         return a * b;
     }
 
     @Override
-    protected double perimetr() {
+    public double perimetr() {
         return 2.0 * (a + b);
     }
 }
-
