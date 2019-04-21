@@ -2,34 +2,24 @@ package com.stormnet;
 
 public final class Circle extends Shape {
 
-    private double r;
-
+    final double r;
 
     public Circle(double r) {
 
-        try {
-            this.r = r;
-        } catch (IllegalArgumentException e) {
-            throw e;
+        if (r <= 0) {
+            throw new IllegalArgumentException("Параметры должны быть положительные");
         }
-    }
 
-    public double getR() {
-        return r;
-    }
-
-    public void setR(double r) {
         this.r = r;
-
     }
 
     @Override
-    protected double square() {
+    public double square() {
         return Math.PI * r * r;
     }
 
     @Override
-    protected double perimetr() {
+    public double perimetr() {
         return 2.0 * Math.PI * r;
     }
 }
