@@ -2,7 +2,7 @@ package com.stormnet;
 
 public final class Circle extends Shape {
 
-    final double r;
+    private final double r;
 
     public Circle(double r) {
 
@@ -23,5 +23,4 @@ public final class Circle extends Shape {
         return 2.0 * Math.PI * r;
     }
 }
-
 
