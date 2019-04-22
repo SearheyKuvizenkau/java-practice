@@ -2,8 +2,8 @@ package com.stormnet;
 
 public final class Rectangle extends Shape {
 
-    final double a;
-    final double b;
+    private final double a;
+    private final double b;
 
 
     public Rectangle(double a, double b) {
@@ -26,3 +26,4 @@ public final class Rectangle extends Shape {
         return 2.0 * (a + b);
     }
 }
+
