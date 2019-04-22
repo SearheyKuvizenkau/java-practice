@@ -4,27 +4,34 @@ public class Main {
 
     public static void main(String[] args) {
 
+        Shape shape = null;
+
         try {
 
             if (args[0].equals("-c") && args.length == 2) {
 
                 try {
-                    Shape shape = new Circle(Double.parseDouble(args[1]));
-                    System.out.println("Площадь круга равна:" + " " + shape.perimetr());
-                    System.out.println("Периметр круга равен:" + " " + shape.square());
-                } catch (IllegalArgumentException e) {
-                    System.out.print("Вы ввели несоотвествующее значение:" + " " + e);
+
+                    shape = new Circle(Double.parseDouble(args[1]));
+                } catch (NumberFormatException e) {
+                    System.out.print("Вы ввели букву или другой символ не являющийся числом");
+            } catch (IllegalArgumentException e) {
+                    System.out.print("Вы ввели отрицательное число либо 0");
                 }
+
             }
 
             if (args[0].equals("-r") && args.length == 3) {
 
                 try {
-                    Shape shape = new Rectangle(Double.parseDouble(args[1]), Double.parseDouble(args[2]));
-                    System.out.println("Площадь прямоугольника равна:" + " " + shape.perimetr());
-                    System.out.println("Периметр прямоугольника равен:" + " " + shape.square());
+
+                    shape = new Rectangle(Double.parseDouble(args[1]), Double.parseDouble(args[2]));
+
+                } catch (NumberFormatException e) {
+                    System.out.print("Вы ввели букву или другой символ не являющийся числом");
                 } catch (IllegalArgumentException e) {
-                    System.out.print("Вы ввели несоотвествующее значения:" + " " + e);
+                    System.out.print("Вы ввели отрицательное число либо 0");
+
                 }
             }
 
@@ -36,8 +43,16 @@ public class Main {
 
             }
 
+            if (shape != null) {
+
+                System.out.println(shape.square());
+                System.out.println(shape.perimetr());
+
+            }
+
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.print("Не были заданы аргументы");
+
         }
     }
 }
