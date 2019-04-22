@@ -1,6 +1,5 @@
 package com.stormnet;
 
-
 public class Main {
 
     public static void main(String[] args) {
@@ -11,10 +10,10 @@ public class Main {
 
                 try {
                     Shape shape = new Circle(Double.parseDouble(args[1]));
-                    System.out.println(args[0] + " " + shape.perimetr());
-                    System.out.println(args[0] + " " + shape.square());
+                    System.out.println("Площадь круга равна:" + " " + shape.perimetr());
+                    System.out.println("Периметр круга равен:" + " " + shape.square());
                 } catch (IllegalArgumentException e) {
-                    System.out.print("Вы ввели отрицательное значение, либо равное нулю:" + " " + e);
+                    System.out.print("Вы ввели несоотвествующее значение:" + " " + e);
                 }
             }
 
@@ -22,13 +21,13 @@ public class Main {
 
                 try {
                     Shape shape = new Rectangle(Double.parseDouble(args[1]), Double.parseDouble(args[2]));
-                    System.out.println(args[0] + " " + shape.perimetr());
-                    System.out.println(args[0] + " " + shape.square());
+                    System.out.println("Площадь прямоугольника равна:" + " " + shape.perimetr());
+                    System.out.println("Периметр прямоугольника равен:" + " " + shape.square());
                 } catch (IllegalArgumentException e) {
-                    System.out.print("Вы ввели отрицательные значения, либо равные нулю:" + " " + e);
+                    System.out.print("Вы ввели несоотвествующее значения:" + " " + e);
                 }
             }
-            
+
             if (args[0].equals("-h") && args.length == 1) {
 
                 System.out.print("Помощь: Программа должна принимать следующие аргуметны:" +
@@ -38,8 +37,7 @@ public class Main {
             }
 
         } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.print("Не были заданы аргументы" + e);
+            System.out.print("Не были заданы аргументы");
         }
     }
 }
-
