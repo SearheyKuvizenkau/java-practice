@@ -15,13 +15,11 @@ public class Main {
                     shape = new Circle(Double.parseDouble(args[1]));
                 } catch (NumberFormatException e) {
                     System.out.print("Вы ввели букву или другой символ не являющийся числом");
-            } catch (IllegalArgumentException e) {
+                } catch (IllegalArgumentException e) {
                     System.out.print("Вы ввели отрицательное число либо 0");
                 }
 
-            }
-
-            if (args[0].equals("-r") && args.length == 3) {
+            } else if (args[0].equals("-r") && args.length == 3) {
 
                 try {
 
@@ -33,16 +31,20 @@ public class Main {
                     System.out.print("Вы ввели отрицательное число либо 0");
 
                 }
-            }
 
-            if (args[0].equals("-h") && args.length == 1) {
+            } else if (args[0].equals("-h") && args.length == 1) {
 
                 System.out.print("Помощь: Программа должна принимать следующие аргуметны:" +
                         " -с r, где r - радиус круга;" +
                         " -r a b, где а и b стороны прямоугольника");
 
+            } else {
+                
+                System.out.print("Вы ввели количество аргументов не соответствующее длине массива," +
+                        " либо ваш вывод не соответствует правилам ввода");
+                
             }
-
+            
             if (shape != null) {
 
                 System.out.println(shape.square());
