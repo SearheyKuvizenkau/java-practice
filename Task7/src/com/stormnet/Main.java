@@ -16,7 +16,7 @@ public class Main {
                 } catch (NumberFormatException e) {
                     System.out.print("Вы ввели букву или другой символ не являющийся числом");
                 } catch (IllegalArgumentException e) {
-                    System.out.print("Вы ввели отрицательное число либо 0");
+                    System.out.print("Circle:" + e.getMessage());
                 }
 
             } else if (args[0].equals("-r") && args.length == 3) {
@@ -28,7 +28,7 @@ public class Main {
                 } catch (NumberFormatException e) {
                     System.out.print("Вы ввели букву или другой символ не являющийся числом");
                 } catch (IllegalArgumentException e) {
-                    System.out.print("Вы ввели отрицательное число либо 0");
+                    System.out.print("Rectangle:" + e.getMessage());
 
                 }
 
@@ -39,12 +39,12 @@ public class Main {
                         " -r a b, где а и b стороны прямоугольника");
 
             } else {
-                
+
                 System.out.print("Вы ввели количество аргументов не соответствующее длине массива," +
                         " либо ваш вывод не соответствует правилам ввода");
-                
+
             }
-            
+
             if (shape != null) {
 
                 System.out.println(shape.square());
