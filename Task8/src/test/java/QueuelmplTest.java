@@ -12,9 +12,6 @@ public class QueuelmplTest {
 
         que.add(5);
         que.add(6);
-        que.add(7);
-        que.add(8);
-        que.add(9);
 
         Assert.assertSame(5, que.peek());
 
@@ -31,18 +28,14 @@ public class QueuelmplTest {
 
         que.add(5);
         que.add(6);
-        que.add(7);
-        que.add(8);
-        que.add(9);
-
 
         Assert.assertSame(5, que.peek());
         Assert.assertNotNull(que.peek());
 
         que.pop();
-        que.pop();
-        que.pop();
-        que.pop();
+
+        Assert.assertSame(6, que.peek());
+
         que.pop();
 
         Assert.assertNull(que.peek());
@@ -56,18 +49,10 @@ public class QueuelmplTest {
 
         que.add(5);
         que.add(6);
-        que.add(7);
-        que.add(8);
-        que.add(9);
 
-        que.pop();
-
-        Assert.assertSame(6, que.peek());
+        Assert.assertSame(5, que.pop());
         Assert.assertNotNull(que.pop());
 
-        que.pop();
-        que.pop();
-        que.pop();
         que.pop();
 
         Assert.assertNull(que.pop());
@@ -83,8 +68,7 @@ public class QueuelmplTest {
         que.add(5);
         que.add(6);
         que.add(7);
-        que.add(8);
-        que.add(9);
+
 
         que1.add(11);
         que1.add(10);
@@ -94,8 +78,7 @@ public class QueuelmplTest {
         que.pop();
         que.pop();
         que.pop();
-        que.pop();
-        que.pop();
+
 
         Assert.assertSame(11, que.peek());
 
@@ -125,7 +108,7 @@ public class QueuelmplTest {
 
         que.pop();
 
-        que.add(-1);
+        que.add(-5);
 
         Assert.assertEquals(-1, que.indexOff(predicate));
 
