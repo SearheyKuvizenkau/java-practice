@@ -51,11 +51,8 @@ public class QueuelmplTest {
         que.add(6);
 
         Assert.assertSame(5, que.pop());
-        Assert.assertNotNull(que.pop());
 
-        que.pop();
-
-        Assert.assertNull(que.pop());
+        Assert.assertSame(6, que.pop());
 
     }
 
