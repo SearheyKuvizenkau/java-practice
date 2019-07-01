@@ -1,6 +1,7 @@
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class MainTest {
@@ -16,15 +17,11 @@ public class MainTest {
         hash.put(5, "Aleksey");
 
         Map<String, Collection<Integer>> result = Main.inverse(hash);
-        Assert.assertTrue(result.containsKey("Sergey"));
-        Assert.assertTrue(result.containsKey("Katya"));
-        Assert.assertTrue(result.containsKey("Aleksander"));
-        Assert.assertTrue(result.containsKey("Aleksey"));
-        Assert.assertTrue(result.containsValue(Arrays.asList(1, 3)));
-        Assert.assertTrue(result.containsValue(Collections.singletonList(2)));
-        Assert.assertTrue(result.containsValue(Collections.singletonList(4)));
-        Assert.assertTrue(result.containsValue(Collections.singletonList(5)));
-
+        Assert.assertEquals(result.get("Sergey"), Arrays.asList(1,3));
+        Assert.assertEquals(result.get("Katya"), Collections.singletonList(2));
+        Assert.assertEquals(result.get("Aleksander"), Collections.singletonList(4));
+        Assert.assertEquals(result.get("Aleksey"), Collections.singletonList(5));
 
     }
 }
+
