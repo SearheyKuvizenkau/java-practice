@@ -1,7 +1,6 @@
 package sudoku_bot_game;
 
 
-
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -12,7 +11,14 @@ import java.util.ArrayList;
 
 import static sudoku_bot_game.SudokuMain.robot;
 
+
+
 class SudokuMethods {
+    
+    static void doScreenshot() throws IOException {
+        SudokuImage.im = robot.createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
+        ImageIO.write(SudokuImage.im, "png", new File("screenshot.png"));
+    }
 
     public static Point searchPoint( BufferedImage subimage, BufferedImage screenshot) {
 
@@ -35,6 +41,7 @@ class SudokuMethods {
     }
 
     static int steps = 0;
+   
 
     public static int match( BufferedImage image, int startX, int startY) {
         int num = -1;
@@ -63,11 +70,6 @@ class SudokuMethods {
             }
         }
         return num;
-    }
-
-    static void doScreenshot() throws IOException {
-        SudokuImage.im = robot.createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
-        ImageIO.write(SudokuImage.im, "png", new File("screenshot.png"));
     }
 
     static  void Solve(){
